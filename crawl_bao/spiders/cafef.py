@@ -21,7 +21,7 @@ class CafeFSpider(SitemapSpider):
             category=response.css('a.cat::text').get(),
             title=response.css('h1.title::text').get(),
             time=response.css('p.dateandcat span::text').get(),
-            recap=response.css('div.w640.fr.clear h2.sapo::text').get(),
+            recap=response.css('h2.sapo::text').get(),
             content='\n'.join(response.css('div#mainContent p::text').getall()),
             author=response.css('p.author::text').get(),
             source=response.css('p.source::text').get(),
